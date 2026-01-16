@@ -27,12 +27,12 @@ The project files are organized as follows:
 * **Core Logic:**
   * `simulation.py`: Defines Agents (Supplier, Buyer), Modules (Environment, Fairness, Policy, Marketplace), and the main Simulation loop.
   * `scenarios.py`: Configuration for the specific policy scenarios (S1–S4).
-  * `metrics.py` & `metrics_schema.py`: Logic for calculating Gini coefficients, emissions, and other KPIs.
+  * `metrics.py` & `extract_metrics.py`: Logic for calculating Gini coefficients, emissions, and extraction of simulation KPIs.
 
 * **Execution Scripts:**
-  * `run_experiments.py`: Runs all scenarios sequentially and saves data to `results.json`.
-  * `main.py`: Utility to run a single scenario for testing or debugging.
-  * `plot_results.py`: Generates the analysis figures (PNG/PDF).
+  * `run_experiments.py`: The main script that runs all scenarios sequentially and saves data to `results.json`.
+  * `main.py`: Utility to run a single scenario for quick testing or debugging.
+  * `plot_results.py`: Generates the analysis figures (PNG/PDF) from the results.
   * `make_table.py`: Generates the results tables in LaTeX format.
 
 ---
@@ -57,7 +57,7 @@ The framework includes configurations for the following policy scenarios (see `s
 
 ### Prerequisites
 * Python 3.8+
-* Required library: `matplotlib`
+* Required library: `matplotlib` (and standard libraries `json`, `random`, `math`)
 
 ### Setup
 1.  Clone the repository:
@@ -67,7 +67,7 @@ The framework includes configurations for the following policy scenarios (see `s
     ```
 2.  Install dependencies:
     ```bash
-    pip install matplotlib
+    pip install -r requirements.txt
     ```
 
 ### 🔁 Reproducing the Results
